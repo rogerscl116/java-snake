@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-import java.util.Timer;
+import javax.swing.Timer;
 
 public class GamePanel extends JPanel implements ActionListener {
 
@@ -19,7 +19,7 @@ public class GamePanel extends JPanel implements ActionListener {
     int applesEaten;
     int appleX;
     int appleY;
-    char direction = "R";
+    char direction = 'R';
     boolean running = false;
     Timer timer;
     Random random;
@@ -33,12 +33,19 @@ public class GamePanel extends JPanel implements ActionListener {
         startGame();
     }
     public void startGame() {
-
+        newApple();
+        running = true;
+        timer = new Timer(DELAY, this);
+        timer.start();
     }
     public void paintComponent(Graphics g) {
-
+        super.paintComponent(g);
+        draw(g);
     }
     public void draw(Graphics g) {
+
+    }
+    public void newApple() {
 
     }
     public void move() {
